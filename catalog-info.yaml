@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: backend-tests-nodejs-vyscqtzt-gitops
+  description: This is GitOps manifest for backend-tests-nodejs-vyscqtzt   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=backend-tests-nodejs-vyscqtzt
+    backstage.io/kubernetes-id: backend-tests-nodejs-vyscqtzt 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: backend-tests-nodejs-vyscqtzt
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:backend-tests-nodejs-vyscqtzt
